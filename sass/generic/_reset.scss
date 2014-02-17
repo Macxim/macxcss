@@ -1,0 +1,164 @@
+/*------------------------------------*\
+	Reset
+\*------------------------------------*/
+
+*{
+	&,
+	&:before,
+	&:after{
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+
+/**
+ * Avoid top margins on first content element
+ */
+p, ul, ol dl,
+blockquote, pre,
+h1, h2, h3, h4, h5, h6{
+	&:first-child{
+		margin-top: 0;
+	}
+}
+
+/**
+ * Avoid margins on nested elements
+ */
+li{
+	p, ul, ol{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Prevents those to break out of their container
+ */
+img, table, td,
+blockquote, code, pre,
+textarea, input, video{
+	max-width: 100%;
+}
+
+/**
+ * Pictures
+ * 1. Bugfix for IE8
+ * 2. Bugfix for Gmap3
+ * 3. Remove blue border on IE
+ */
+img{
+	vertical-align: middle;
+	width: auto; /* 1 */
+
+	:not(.gm-style),
+	:not(.gmnoscreen),
+	:not(.gmnoprint){
+		&{
+			height: auto !important; /* 2 */
+		}
+	}
+
+	.gm-style,
+	.gmnoscreen,
+	.gmnoprint{
+		&{
+			max-width: none !important; /* 2 */
+		}
+	}
+
+	a &{
+		border: 0; /* 3 */
+	}
+}
+
+/**
+ * Hide script and style tags in case of table mode
+ */
+body > script,
+body > style{
+	display: none !important;
+}
+
+/**
+ * Force word wrapping on small screens
+ */
+@include mq(small){
+	div, textarea,
+	table, td, th,
+	code, pre, samp{
+	 -ms-word-break: break-all;
+	 word-break: break-all;
+	 word-break: break-word;
+	 -webkit-hyphens: auto;
+	 -moz-hyphens: auto;
+	 hyphens: auto;
+	}
+}
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+abbr[title],dfn[title]{
+	cursor:help;
+}
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+u,ins{
+	text-decoration:none;
+}
+
+/**
+ * Apply faux underline via `border-bottom`.
+ */
+ins{
+	border-bottom: 1px solid;
+}
+
+/**
+ * So that `alt` text is visually offset if images don’t load.
+ */
+img{
+	font-style: italic;
+}
+
+/**
+ * Images in `figure` elements.
+ */
+figure > img{
+	display: block;
+}
+
+
+/**
+ * Give form elements some cursor interactions...
+ */
+label,
+input,
+textarea,
+button,
+select,
+option{
+	cursor: pointer;
+}
+	.text-input:active,
+	.text-input:focus,
+	textarea:active,
+	textarea:focus{
+		cursor: text;
+		outline: none;
+	}
+
+/**
+ * Remove vertical spacing from nested lists.
+ */
+li{
+	> ul,
+	> ol{
+		margin-bottom: 0;
+	}
+}
