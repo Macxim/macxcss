@@ -5,7 +5,6 @@
   "author": "Maxime Laforet",
   "description": "Macxcss is a lightweight Sass-based CSS framework.",
   "dependencies": {
-    "normalize-css": "3.0.0"
   },
   "authors": [
     "Maxime Laforet <@Macxim>"
