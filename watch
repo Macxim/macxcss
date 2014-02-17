@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# How to use this?
+# $ cd your-project-folder
+# $ ./watch
+
+# Output options: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# nested / expanded / compact / compressed
+
+sass --watch macx.scss:style.min.css --style expanded
+
+exit 0
